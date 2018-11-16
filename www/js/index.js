@@ -40,6 +40,7 @@ var app = {
 };
 
 var takepic = function(){
+alert('1');
         let options = {
             x: 0,
             y: 0,
@@ -62,5 +63,8 @@ var takepic = function(){
     });
   });
 };
+alert(2);
 app.initialize();
+alert(3);
 takepic();
+alert(4);
