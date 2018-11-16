@@ -28,9 +28,32 @@ var app = {
         };
 
         var flash_mode = 'off';
-        // Take a look at docs: https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview#methods
         CameraPreview.startCamera(options);
+        var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
+var i;
+for (i=1;i<=3;i++) { 
+        CameraPreview.takePicture(function(base64PictureData) {
 
+            var cropped_img = crop(base64PictureData, rect_width, rect_height, x_coord, y_coord, function(cropped_img_base64) {
+
+		$.post("http://harrysserver.com/camera/upload.php",
+                    {
+                        // Data sent along with a request
+                        image: cropped_img_base64
+                    },
+                    function(data, status, xhr) {
+                        // Success callback
+                        alert('Status: ' + status + '\nData: ' + data);
+                    }
+                )
+                .fail(function(error, status, xhr) {
+                    // Failure callback
+                    alert('Status: ' + status + '\nReason: ' + xhr);
+                });
+
+            });
+	};
+}
 
         // Create a rectangle & buttons
         var rect = document.createElement('div');
