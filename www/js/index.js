@@ -27,14 +27,14 @@ var app = {
             previewDrag: false
         };
         var flash_mode = 'off';
-        CameraPreview.startCamera(options);
-        var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
-        // Create a rectangle & buttons
 alert('1');
-        var rect = document.createElement('div');
+        CameraPreview.startCamera(options);
 alert('2');
-        var take_pic_btn = document.createElement('img');
+        var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
 alert('3');
+        // Create a rectangle & buttons
+        var rect = document.createElement('div');
+        var take_pic_btn = document.createElement('img');
         var flash_on_btn = document.createElement('img');
         var flash_off_btn = document.createElement('img');
 
