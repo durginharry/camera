@@ -21,7 +21,7 @@ alert(1);
 alert(2);
           photo = 'data:image/jpeg;base64,'+base64PictureData;
 alert(3);
-          $.post("http://192.168.0.14:8000/api/images/create/", {image: photo}, function(data, status, xhr) {alert('success');}, function(error, status, xhr) {alert('fail');});
+          $.post("http://harrysserver.com/camera/upload.php", {image: photo}, function(data, status, xhr) {alert('success');}, function(error, status, xhr) {alert('fail');});
         });
     }
 }
