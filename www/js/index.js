@@ -61,8 +61,23 @@ var app = {
 
 
         // take_pic_btn.onclick = function(){
-        take_photo: function(){
 
+        flash_on_btn.onclick = function() {
+            flash_mode = 'on';
+            flash_off_btn.style.visibility = 'visible';
+            flash_on_btn.style.visibility = 'hidden';
+
+            CameraPreview.setFlashMode(flash_mode);
+        }
+
+        flash_off_btn.onclick = function() {
+            flash_mode = 'off';
+            flash_off_btn.style.visibility = 'hidden';
+            flash_on_btn.style.visibility = 'visible';
+
+            CameraPreview.setFlashMode(flash_mode);
+        }
+        var takePhoto function(){
             // Get rectangle size
             var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
 
@@ -91,22 +106,6 @@ var app = {
 
                 });
             });
-        };
-
-        flash_on_btn.onclick = function() {
-            flash_mode = 'on';
-            flash_off_btn.style.visibility = 'visible';
-            flash_on_btn.style.visibility = 'hidden';
-
-            CameraPreview.setFlashMode(flash_mode);
-        }
-
-        flash_off_btn.onclick = function() {
-            flash_mode = 'off';
-            flash_off_btn.style.visibility = 'hidden';
-            flash_on_btn.style.visibility = 'visible';
-
-            CameraPreview.setFlashMode(flash_mode);
         }
     },
 
