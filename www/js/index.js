@@ -27,16 +27,19 @@ var app = {
             previewDrag: false
         };
         var flash_mode = 'off';
-alert('1');
         CameraPreview.startCamera(options);
-alert('2');
-        var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
-alert('3');
+alert('1');
         // Create a rectangle & buttons
         var rect = document.createElement('div');
+alert('2');
         var take_pic_btn = document.createElement('img');
+alert('2');
         var flash_on_btn = document.createElement('img');
+alert('2');
         var flash_off_btn = document.createElement('img');
+alert('2');
+        var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
+alert('2');
 
         // You must specify path relative to www folder
         take_pic_btn.src = 'img/take_photo.png';
