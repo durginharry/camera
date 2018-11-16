@@ -26,26 +26,23 @@ var app = {
             tapFocus: true,   // Tap to focus
             previewDrag: false
         };
-alert('1');
         var flash_mode = 'off';
-alert('2');
         CameraPreview.startCamera(options);
-alert('2');
         var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
-alert('2');
         // Create a rectangle & buttons
+alert('1');
         var rect = document.createElement('div');
+alert('2');
         var take_pic_btn = document.createElement('img');
+alert('3');
         var flash_on_btn = document.createElement('img');
         var flash_off_btn = document.createElement('img');
-alert('2');
 
         // You must specify path relative to www folder
         take_pic_btn.src = 'img/take_photo.png';
         flash_on_btn.src = 'img/flash_on.svg';
         flash_off_btn.src = 'img/flash_off.svg';
 
-alert('3');
         // Add styles
         rect.className += 'rect_class';
         take_pic_btn.className += ' take_pic_class'
