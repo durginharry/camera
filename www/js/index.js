@@ -16,8 +16,11 @@ var app = {
             previewDrag: false
         };
         CameraPreview.startCamera(options);
+alert(1);
         CameraPreview.takePicture({width: 640, height: 640, quality: 85}, function(base64PictureData) {
+alert(2);
           photo = 'data:image/jpeg;base64,'+base64PictureData;
+alert(3);
           $.post("http://192.168.0.14:8000/api/images/create/", {image: photo}, function(data, status, xhr) {alert('success');}, function(error, status, xhr) {alert('fail');});
         });
     }
