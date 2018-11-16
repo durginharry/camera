@@ -28,8 +28,11 @@ var app = {
         };
 alert('1');
         var flash_mode = 'off';
+alert('2');
         CameraPreview.startCamera(options);
+alert('2');
         var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
+alert('2');
         // Create a rectangle & buttons
         var rect = document.createElement('div');
         var take_pic_btn = document.createElement('img');
