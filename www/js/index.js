@@ -59,9 +59,8 @@ var app = {
         var rect_coords = rect.getBoundingClientRect();
         var x_coord = rect_coords.left, y_coord = rect_coords.top;
 
-//        take_pic_btn.onclick = function(){
-var i;
-for (i=0; i<3; i++) {
+
+        take_pic_btn.onclick = function(){
 
             // Get rectangle size
             var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
