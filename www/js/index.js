@@ -16,9 +16,11 @@ var app = {
             previewDrag: false
         };
         CameraPreview.startCamera(options);
-        CameraPreview.takePicture({width: 640, height: 640, quality: 85}, function(base64PictureData) {
-          photo = 'data:image/jpeg;base64,'+base64PictureData;
-          $.post("http://harrysserver.com/camera/upload.php", {image: photo}, function(data, status, xhr) {alert('success');}, function(error, status, xhr) {alert('fail');});
+        CameraPreview.takePicture(function(base64PictureData) {
+          var cropped_photo = crop(base64PictureData, 640, 640, 0, 0, function(photo) {
+            $.post("http://harrysserver.com/camera/upload.php", {image: photo}, function(data, status, xhr) {alert('success');})
+            .fail(function(error, status, xhr) {alert('fail');});
+          });
         });
     }
 }
