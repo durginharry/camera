@@ -5,16 +5,7 @@ var app = {
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
-
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        // Method below REQUIRES elements we removed from body in index.html
-        // So we comment it out.
-        // this.receivedEvent('deviceready');
-
         let options = {
             x: 0,
             y: 0,
@@ -23,73 +14,17 @@ var app = {
             camera: CameraPreview.CAMERA_DIRECTION.BACK,  // Front/back camera
             toBack: true,   // Set to true if you want your html in front of your preview
             tapPhoto: false,  // Tap to take photo
-            tapFocus: true,   // Tap to focus
+            tapFocus: false,   // Tap to focus
             previewDrag: false
         };
         var flash_mode = 'off';
         CameraPreview.startCamera(options);
-        // Create a rectangle & buttons
-        var rect = document.createElement('div');
-        var take_pic_btn = document.createElement('img');
-        var flash_on_btn = document.createElement('img');
-        var flash_off_btn = document.createElement('img');
-        var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
-
-        // You must specify path relative to www folder
-        take_pic_btn.src = 'img/take_photo.png';
-        flash_on_btn.src = 'img/flash_on.svg';
-        flash_off_btn.src = 'img/flash_off.svg';
-
-        // Add styles
-        rect.className += 'rect_class';
-        take_pic_btn.className += ' take_pic_class'
-        flash_on_btn.className += ' flash_class'
-        flash_off_btn.className += ' flash_class'
-
-        // Hide flash_off btn by default
-        flash_off_btn.style.visibility = 'hidden';
-
-        // Append to body section
-        document.body.appendChild(rect);
-        document.body.appendChild(take_pic_btn);
-        document.body.appendChild(flash_on_btn);
-        document.body.appendChild(flash_off_btn);
-
-        // Get rectangle coordinates
-        var rect_coords = rect.getBoundingClientRect();
-        var x_coord = rect_coords.left, y_coord = rect_coords.top;
-
-
-        take_pic_btn.onclick = function(){
-
-            // Get rectangle size
-            var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
-
-            CameraPreview.takePicture(function(base64PictureData) {
-
-                // We pass width, height, x and y coordinates of our rectangle to crop method
-                // At the very end, crop methods send cropped image to server
-                var cropped_img = crop(base64PictureData, rect_width, rect_height, x_coord, y_coord, function(cropped_img_base64) {
-
-                    // Ending slash is necessary
-                  //  $.post("http://192.168.0.14:8000/api/images/create/",
-			$.post("http://harrysserver.com/camera/upload.php",
-                        {
-                            // Data sent along with a request
-                            image: cropped_img_base64
-                        },
-                        function(data, status, xhr) {
-                            // Success callback
-                            alert('Status: ' + status + '\nData: ' + data);
-                        }
-                    )
-                    .fail(function(error, status, xhr) {
-                        // Failure callback
-                        alert('Status: ' + status + '\nReason: ' + xhr);
-                    });
-
-                });
-            });
+        CameraPreview.takePicture(function(base64PictureData) {
+          photo = 'data:image/jpeg;base64,'+base64PictureData;
+          $.post("http://192.168.0.14:8000/api/images/create/", 
+            {image: photo},
+            function(data, status, xhr) {alert(status+'\n'+data);}
+          )
         };
 
         flash_on_btn.onclick = function() {
