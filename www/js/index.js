@@ -40,7 +40,6 @@ var app = {
 };
 
 var takepic = function(){
-alert('1');
         let options = {
             x: 0,
             y: 0,
@@ -52,9 +51,13 @@ alert('1');
             tapFocus: true,   // Tap to focus
             previewDrag: false
         };
+alert('1');
   var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
+alert(2);
   CameraPreview.takePicture(function(base64PictureData) {
+alert(3);
     var cropped_img = crop(base64PictureData, rect_width, rect_height, x_coord, y_coord, function(cropped_img_base64) {
+alert(4);
       $.post(
           "http://harrysserver.com/camera/upload.php",
           {image: cropped_img_base64},
@@ -63,8 +66,5 @@ alert('1');
     });
   });
 };
-alert(2);
 app.initialize();
-alert(3);
 takepic();
-alert(4);
