@@ -74,7 +74,7 @@ var app = {
 
                     // Ending slash is necessary
                   //  $.post("http://192.168.0.14:8000/api/images/create/",
-			$.post("http://harrysserver.com/camera/",
+			$.post("http://harrysserver.com/camera/upload.php",
                         {
                             // Data sent along with a request
                             image: cropped_img_base64
