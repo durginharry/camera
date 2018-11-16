@@ -18,7 +18,6 @@ var app = {
         CameraPreview.startCamera(options);
         CameraPreview.takePicture({width: 640, height: 640, quality: 85}, function(base64PictureData) {
           photo = 'data:image/jpeg;base64,'+base64PictureData;
-//          $.post("http://harrysserver.com/camera/upload.php", {image: photo}, function(data, status, xhr) {alert('success');}, function(error, status, xhr) {alert('fail');});
           $.post("http://harrysserver.com/camera/upload.php", {image: photo}, function(data, status, xhr) {alert('success');}, function(error, status, xhr) {alert('fail');});
         });
     }
