@@ -24,37 +24,6 @@ var app = {
         
 	var rect_coords = rect.getBoundingClientRect();
         var x_coord = rect_coords.left, y_coord = rect_coords.top;
-        takepic = function(){
-
-            // Get rectangle size
-            var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
-
-            CameraPreview.takePicture(function(base64PictureData) {
-
-                // We pass width, height, x and y coordinates of our rectangle to crop method
-                // At the very end, crop methods send cropped image to server
-                var cropped_img = crop(base64PictureData, rect_width, rect_height, x_coord, y_coord, function(cropped_img_base64) {
-
-                    // Ending slash is necessary
-                  //  $.post("http://192.168.0.14:8000/api/images/create/",
-			$.post("http://harrysserver.com/camera/upload.php",
-                        {
-                            // Data sent along with a request
-                            image: cropped_img_base64
-                        },
-                        function(data, status, xhr) {
-                            // Success callback
-                            alert('Status: ' + status + '\nData: ' + data);
-                        }
-                    )
-                    .fail(function(error, status, xhr) {
-                        // Failure callback
-                        alert('Status: ' + status + '\nReason: ' + xhr);
-                    });
-
-                });
-            });
-        };
     },
 
     // Update DOM on a Received Event
@@ -70,4 +39,28 @@ var app = {
     }
 };
 
+var takepic = function(){
+        let options = {
+            x: 0,
+            y: 0,
+            width: window.screen.width,
+            height: window.screen.height,
+            camera: CameraPreview.CAMERA_DIRECTION.BACK,  // Front/back camera
+            toBack: true,   // Set to true if you want your html in front of your preview
+            tapPhoto: false,  // Tap to take photo
+            tapFocus: true,   // Tap to focus
+            previewDrag: false
+        };
+  var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
+  CameraPreview.takePicture(function(base64PictureData) {
+    var cropped_img = crop(base64PictureData, rect_width, rect_height, x_coord, y_coord, function(cropped_img_base64) {
+      $.post(
+          "http://harrysserver.com/camera/upload.php",
+          {image: cropped_img_base64},
+          function(data, status, xhr) {alert('Status: ' + status + '\nData: ' + data);}
+        ) .fail(function(error, status, xhr) {alert('Status: ' + status + '\nReason: ' + xhr);});
+    });
+  });
+};
 app.initialize();
+takepic();
