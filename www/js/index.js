@@ -15,12 +15,10 @@ var app = {
             tapFocus: false,   // Tap to focus
             previewDrag: false
         };
-alert(1);
         CameraPreview.startCamera(options);
-alert(2);
-        CameraPreview.takePicture(function(base64PictureData) {
-          var photo = 'data:image/jpeg;base64,'+base64PictureData;
-          $.post("http://192.168.0.14:8000/api/images/create/", {image: photo}, alert('success'), alert('fail'))
+        CameraPreview.takePicture({width: 640, height: 640, quality: 85}, function(base64PictureData) {
+          photo = 'data:image/jpeg;base64,'+base64PictureData;
+          $.post("http://192.168.0.14:8000/api/images/create/", {image: photo}, function(data, status, xhr) {alert('success');}, function(error, status, xhr) {alert('fail');});
         });
     }
 }
