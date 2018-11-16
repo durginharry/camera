@@ -2,9 +2,7 @@
 
 var app = {
     // Application Constructor
-    initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-    },
+    initialize: function() {document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);},
     onDeviceReady: function() {
         let options = {
             x: 0,
@@ -17,47 +15,14 @@ var app = {
             tapFocus: false,   // Tap to focus
             previewDrag: false
         };
-        var flash_mode = 'off';
 alert(1);
         CameraPreview.startCamera(options);
 alert(2);
         CameraPreview.takePicture(function(base64PictureData) {
-          photo = 'data:image/jpeg;base64,'+base64PictureData;
-alert(3);
-          $.post("http://192.168.0.14:8000/api/images/create/", 
-            {image: photo},
-            function(data, status, xhr) {alert(status+'\n'+data);}
-          )
-        };
-
-        flash_on_btn.onclick = function() {
-            flash_mode = 'on';
-            flash_off_btn.style.visibility = 'visible';
-            flash_on_btn.style.visibility = 'hidden';
-
-            CameraPreview.setFlashMode(flash_mode);
-        }
-
-        flash_off_btn.onclick = function() {
-            flash_mode = 'off';
-            flash_off_btn.style.visibility = 'hidden';
-            flash_on_btn.style.visibility = 'visible';
-
-            CameraPreview.setFlashMode(flash_mode);
-        }
-    },
-
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+          var photo = 'data:image/jpeg;base64,'+base64PictureData;
+          $.post("http://192.168.0.14:8000/api/images/create/", {image: photo}, alert('success'), alert('fail'))
+        });
     }
-};
+}
 
 app.initialize();
