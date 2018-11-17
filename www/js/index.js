@@ -122,4 +122,9 @@ var app = {
     }
 };
 
+var test=function(txt) {
+  alert(txt);
+}
+
 app.initialize();
+test('got here');
