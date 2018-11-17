@@ -19,6 +19,7 @@ var app = {
        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
     onDeviceReady: function() {
+alert(2);
        takePhoto();
     }
 }
