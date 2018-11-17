@@ -1,11 +1,38 @@
-// index.js
-function takePhoto() {
+var app = {
+    initialize: function() {
+        this.bindEvents();
+    },
+    bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+    onDeviceReady: function() {
+        app.receivedEvent('deviceready');
+    },
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
 
-alert(1);
-  CameraPreview.takePicture(function(cameraData) {
-alert(2);
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
+    }
+};
+function capture() {
+  alert(1);
+  CameraPreview.getZoom(function(currentZoom){
+    alert(currentZoom);
+  });
+}
+app.initialize();
+capture();
+
+
+
+
+//    CameraPreview.takePicture(function(cameraData) {alert(1);};
 //    photo='data:image/jpeg;base64,'+cameraData;
-alert(3);
 //    $.post("http://harrysserver.com/camera/upload.php",
 //                        {
 //                            // Data sent along with a request
@@ -16,15 +43,3 @@ alert(3);
 //                            alert('Status: ' + status + '\nData: ' + data);
 //                        }
 //                    );
-alert(4);
-  });
-}
-var app = {
-    initialize: function() {
-       document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-    },
-    onDeviceReady: function() {
-       takePhoto();
-    }
-}
-app.initialize();
