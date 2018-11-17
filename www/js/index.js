@@ -14,7 +14,7 @@ var app = {
             tapFocus: true,   // Tap to focus
             previewDrag: false
         };
-        CameraPreview.startCamera(options);
+//        CameraPreview.startCamera(options);
         take_pic_btn.onclick = function(){
             CameraPreview.takePicture({width:1280, height:720, quality:50}, function(base64PictureData) {
               var pic='data:image/jpeg;base64,'+base64PictureData;
