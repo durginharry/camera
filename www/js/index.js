@@ -1,20 +1,8 @@
-// index.js
-
 var app = {
-    // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
-
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        // Method below REQUIRES elements we removed from body in index.html
-        // So we comment it out.
-        // this.receivedEvent('deviceready');
-
         let options = {
             x: 0,
             y: 0,
@@ -27,7 +15,7 @@ var app = {
             previewDrag: false
         };
         var flash_mode = 'off';
-        CameraPreview.startCamera(options);
+//        CameraPreview.startCamera(options);
         // Create a rectangle & buttons
         var rect = document.createElement('div');
         var take_pic_btn = document.createElement('img');
