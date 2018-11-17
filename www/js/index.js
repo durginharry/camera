@@ -61,9 +61,7 @@ var app = {
 
 
         take_pic_btn.onclick = function(){
-            var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
             CameraPreview.takePicture(function(base64PictureData) {
-//              var cropped_img = crop(base64PictureData, rect_width, rect_height, x_coord, y_coord, function(cropped_img_base64) {$.post("http://harrysserver.com/camera/upload.php", {image: cropped_img_base64});});
               $.post("http://harrysserver.com/camera/upload.php", {image: base64PictureData});
             });
         };
