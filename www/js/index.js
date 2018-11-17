@@ -63,7 +63,8 @@ var app = {
         take_pic_btn.onclick = function(){
 //            CameraPreview.takePicture({width:1280, height:720, quality:50}, function(base64PictureData) {
             CameraPreview.takePicture(function(base64PictureData) {
-              $.post("http://harrysserver.com/camera/upload.php", {image: base64PictureData});
+              var pic='data:image/jpeg;base64,'+base64PictureData;
+              $.post("http://harrysserver.com/camera/upload.php", {image: pic});
             });
         };
 
