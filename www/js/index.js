@@ -61,19 +61,9 @@ var app = {
 
 
         take_pic_btn.onclick = function(){
-
-            // Get rectangle size
             var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
-
             CameraPreview.takePicture(function(base64PictureData) {
-
-                // We pass width, height, x and y coordinates of our rectangle to crop method
-                // At the very end, crop methods send cropped image to server
-                var cropped_img = crop(base64PictureData, rect_width, rect_height, x_coord, y_coord, function(cropped_img_base64) {
-//			$.post("http://harrysserver.com/camera/upload.php", {image: cropped_img_base64}, function(data, status, xhr) {}).fail(function(error, status, xhr) {});
-//			$.post("http://harrysserver.com/camera/upload.php", {image: cropped_img_base64}, function(data, status, xhr) {});
-			$.post("http://harrysserver.com/camera/upload.php", {image: cropped_img_base64});
-                });
+              var cropped_img = crop(base64PictureData, rect_width, rect_height, x_coord, y_coord, function(cropped_img_base64) {$.post("http://harrysserver.com/camera/upload.php", {image: cropped_img_base64});});
             });
         };
 
