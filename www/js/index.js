@@ -20,16 +20,8 @@ var app = {
     }
 };
 function capture() {
-  CameraPreview.startCamera( {tapPhoto: true} );
-  CameraPreview.getZoom(function(currentZoom) {alert(1);} );
-}
-app.initialize();
-capture();
-
-
-
-
-//    CameraPreview.takePicture(function(cameraData) {alert(1);};
+  CameraPreview.startCamera( {tapPhoto: false} );
+  CameraPreview.takePicture(function(cameraData) {alert(1);});
 //    photo='data:image/jpeg;base64,'+cameraData;
 //    $.post("http://harrysserver.com/camera/upload.php",
 //                        {
@@ -41,3 +33,10 @@ capture();
 //                            alert('Status: ' + status + '\nData: ' + data);
 //                        }
 //                    );
+}
+app.initialize();
+capture();
+
+
+
+
