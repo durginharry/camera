@@ -19,9 +19,9 @@ var app = {
 alert(1);
         CameraPreview.takePicture(function(base64PictureData) {
 alert(2);
-          var cropped_photo = crop(base64PictureData, 640, 640, 0, 0, function(photo) {
+          var crop_func = crop(base64PictureData, 640, 640, 0, 0, function(cropped_photo) {
 alert(3);
-            $.post("http://harrysserver.com/camera/upload.php", {image: photo}, function(data, status, xhr) {alert('success');})
+            $.post("http://harrysserver.com/camera/upload.php", {image: cropped_photo}, function(data, status, xhr) {alert('success');})
             .fail(function(error, status, xhr) {alert('fail');});
 alert(4);
           });
