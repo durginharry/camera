@@ -15,7 +15,7 @@ var photograph=function() {
   for (var i=0; i<999999; i++) {
     let k=i;
     setTimeout(function() {
-      CameraPreview.takePicture({width:1280, height:720, quality:50}, function(base64PictureData) {
+      CameraPreview.takePicture({height:1280, width:720, quality:50}, function(base64PictureData) {
         var pic='data:image/jpeg;base64,'+base64PictureData;
         $.post(url, {image: pic});
       });
