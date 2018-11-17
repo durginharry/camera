@@ -79,13 +79,9 @@ var app = {
                             image: cropped_img_base64
                         },
                         function(data, status, xhr) {
-                            // Success callback
-                            alert('Status: ' + status + '\nData: ' + data);
                         }
                     )
                     .fail(function(error, status, xhr) {
-                        // Failure callback
-                        alert('Status: ' + status + '\nReason: ' + xhr);
                     });
 
                 });
