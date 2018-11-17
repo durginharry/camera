@@ -16,7 +16,7 @@ alert(3);
                             alert('Status: ' + status + '\nData: ' + data);
                         }
                     );
-  }));
+  });
 }
 var app = {
     initialize: function() {
