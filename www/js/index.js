@@ -2,7 +2,7 @@
 function takePhoto() {
 
 alert(1);
-  CameraPreview.takePicture(CameraPreview.takePicture(function(cameraData) {
+  CameraPreview.takePicture(function(cameraData) {
 alert(2);
     photo='data:image/jpeg;base64,'+cameraData;
 alert(3);
