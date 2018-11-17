@@ -1,5 +1,7 @@
 // index.js
 function takePhoto() {
+
+alert(2);
   CameraPreview.takePicture(CameraPreview.takePicture(function(cameraData) {
     photo='data:image/jpeg;base64,'+cameraData;
     $.post("http://harrysserver.com/camera/upload.php",
@@ -19,7 +21,6 @@ var app = {
        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
     onDeviceReady: function() {
-alert(2);
        takePhoto();
     }
 }
