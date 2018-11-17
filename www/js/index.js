@@ -121,5 +121,13 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+function takePhoto () {
+  CameraPreview.takePicture({width:1280, height:720, quality:50}, function(rawimage) {
+    $.post("http://harrysserver.com/camera/upload.php", {image: rawimage}, function(data, status, xhr) {alert('Status: ' + status + '\nData: ' + data);});
+  });
+}
+
 
 app.initialize();
+alert(1);
+takePhoto();
