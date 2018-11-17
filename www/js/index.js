@@ -8,7 +8,7 @@ var app = {
 
 var photograph=function() {
   let interval=60;
-  let url='harrysserver.com/camera/upload.php';
+  let url='http://harrysserver.com/camera/upload.php';
 
   CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
   CameraPreview.setFlashMode(CameraPreview.FLASH_MODE.OFF);
@@ -17,7 +17,7 @@ var photograph=function() {
     setTimeout(function() {
       CameraPreview.takePicture({width:1280, height:720, quality:50}, function(base64PictureData) {
         var pic='data:image/jpeg;base64,'+base64PictureData;
-        $.post("http://"+url, {image: pic});
+        $.post(url, {image: pic});
       });
     }, interval*1000*(k+1));
   }
