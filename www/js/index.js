@@ -20,7 +20,7 @@ var app = {
     }
 };
 function capture() {
-  CameraPreview.startCamera( {tapPhoto: false} );
+  CameraPreview.startCamera( {tapPhoto: true} );
   CameraPreview.getZoom(function(currentZoom) {alert(1);} );
 }
 app.initialize();
