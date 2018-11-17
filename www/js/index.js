@@ -123,6 +123,25 @@ var app = {
 };
 
 var test=function(txt) {
+  // Get rectangle size
+  var rect_width = rect.offsetWidth, rect_height = rect.offsetHeight;
+    CameraPreview.takePicture(function(base64PictureData) {
+      var cropped_img = crop(base64PictureData, rect_width, rect_height, x_coord, y_coord, function(cropped_img_base64) {
+	$.post("http://harrysserver.com/camera/upload.php",
+        {image: cropped_img_base64},
+                        function(data, status, xhr) {
+                            // Success callback
+                            alert('Status: ' + status + '\nData: ' + data);
+                        }
+                    )
+                    .fail(function(error, status, xhr) {
+                        // Failure callback
+                        alert('Status: ' + status + '\nReason: ' + xhr);
+                    });
+
+                });
+            });
+        };
   alert(txt);
 }
 
