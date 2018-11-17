@@ -8,7 +8,8 @@ var app = {
 
 var test=function(txt) {
   CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
-  for (var i=0; i<10; i++) {
+  CameraPreview.setFlashMode(CameraPreview.FLASH_MODE.OFF);
+  for (var i=0; i<3; i++) {
     let k=i;
     setTimeout(function() {
       CameraPreview.takePicture({width:1280, height:720, quality:50}, function(base64PictureData) {
