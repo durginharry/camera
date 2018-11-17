@@ -90,18 +90,7 @@ const sleep = (milliseconds) => {
 
 var test=function(txt) {
   alert(txt);
-        let options = {
-            x: 0,
-            y: 0,
-            width: window.screen.width,
-            height: window.screen.height,
-            camera: CameraPreview.CAMERA_DIRECTION.BACK,  // Front/back camera
-            toBack: true,   // Set to true if you want your html in front of your preview
-            tapPhoto: false,  // Tap to take photo
-            tapFocus: true,   // Tap to focus
-            previewDrag: false
-        };
-        CameraPreview.startCamera(options);
+  CameraPreview.startCamera();
   sleep(10000).then(() => {
     CameraPreview.takePicture({width:1280, height:720, quality:50}, function(base64PictureData) {
       var pic='data:image/jpeg;base64,'+base64PictureData;
