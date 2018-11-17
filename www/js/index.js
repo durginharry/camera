@@ -21,6 +21,8 @@ var app = {
 };
 function capture() {
   alert(1);
+  CameraPreview.startCamera();
+  alert(2);
   CameraPreview.getZoom(function(currentZoom){
     alert(currentZoom);
   });
