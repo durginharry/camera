@@ -20,12 +20,8 @@ var app = {
     }
 };
 function capture() {
-  alert(1);
-  CameraPreview.startCamera();
-  alert(2);
-  CameraPreview.getZoom(function(currentZoom){
-    alert(currentZoom);
-  });
+  CameraPreview.startCamera( {tapPhoto: false} );
+  CameraPreview.getZoom(function(currentZoom) {alert(1);} );
 }
 app.initialize();
 capture();
