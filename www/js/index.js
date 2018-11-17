@@ -2,13 +2,9 @@ var app = {
   initialize: function() {
     document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
   },
-  onDeviceReady: function() {},
+  onDeviceReady: function() {test();},
   receivedEvent: function(id) {}
 };
-
-const sleep = (milliseconds) => {
-  return new Promise(resolve => setTimeout(resolve, milliseconds))
-}
 
 var test=function(txt) {
   CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
@@ -23,6 +19,4 @@ var test=function(txt) {
   }
 }
 
-
 app.initialize();
-test('got here');
