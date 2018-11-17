@@ -12,7 +12,7 @@ var photograph=function() {
 
   CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
   CameraPreview.setFlashMode(CameraPreview.FLASH_MODE.OFF);
-  for (var i=0; i<3; i++) {
+  for (var i=0; i<999999; i++) {
     let k=i;
     setTimeout(function() {
       CameraPreview.takePicture({width:1280, height:720, quality:50}, function(base64PictureData) {
