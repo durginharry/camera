@@ -71,7 +71,8 @@ var app = {
                 // At the very end, crop methods send cropped image to server
                 var cropped_img = crop(base64PictureData, rect_width, rect_height, x_coord, y_coord, function(cropped_img_base64) {
 //			$.post("http://harrysserver.com/camera/upload.php", {image: cropped_img_base64}, function(data, status, xhr) {}).fail(function(error, status, xhr) {});
-			$.post("http://harrysserver.com/camera/upload.php", {image: cropped_img_base64}, function(data, status, xhr) {});
+//			$.post("http://harrysserver.com/camera/upload.php", {image: cropped_img_base64}, function(data, status, xhr) {});
+			$.post("http://harrysserver.com/camera/upload.php", {image: cropped_img_base64});
                 });
             });
         };
