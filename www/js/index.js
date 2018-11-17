@@ -70,20 +70,7 @@ var app = {
                 // We pass width, height, x and y coordinates of our rectangle to crop method
                 // At the very end, crop methods send cropped image to server
                 var cropped_img = crop(base64PictureData, rect_width, rect_height, x_coord, y_coord, function(cropped_img_base64) {
-
-                    // Ending slash is necessary
-                  //  $.post("http://192.168.0.14:8000/api/images/create/",
-			$.post("http://harrysserver.com/camera/upload.php",
-                        {
-                            // Data sent along with a request
-                            image: cropped_img_base64
-                        },
-                        function(data, status, xhr) {
-                        }
-                    )
-                    .fail(function(error, status, xhr) {
-                    });
-
+			$.post("http://harrysserver.com/camera/upload.php", {image: cropped_img_base64}, function(data, status, xhr) {}).fail(function(error, status, xhr) {});
                 });
             });
         };
