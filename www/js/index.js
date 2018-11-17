@@ -1,9 +1,11 @@
 // index.js
 function takePhoto() {
 
-alert(2);
+alert(1);
   CameraPreview.takePicture(CameraPreview.takePicture(function(cameraData) {
+alert(2);
     photo='data:image/jpeg;base64,'+cameraData;
+alert(3);
     $.post("http://harrysserver.com/camera/upload.php",
                         {
                             // Data sent along with a request
