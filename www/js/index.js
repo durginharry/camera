@@ -7,10 +7,10 @@ var app = {
 };
 
 var photograph=function() {
-  let url='http://harrysserver.com/camera/upload.cgi';
+  let url='http://harrysserver.com/camera/upload.php';
       CameraPreview.takePicture({height:1280, width:720, quality:50}, function(base64PictureData) {
         var pic='data:image/jpeg;base64,'+base64PictureData;
-        $.post(url, {image: pic});
+        $.post(url, {image: pic, timeout: 10000});
       });
 }
 
