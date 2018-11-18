@@ -23,15 +23,14 @@ async function delayedLog(item) {
   photograph();
 }
 
-async function processArray(array) { 
-  for(const item of array){
+async function processArray() { 
+ for (var i=0; i<Infinity; i++) { 
      await delayedLog(item);
   };
-  console.log('Done!');
 }
 
 app.initialize();
 CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
 CameraPreview.setFlashMode(CameraPreview.FLASH_MODE.OFF);
-processArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+processArray();
 
