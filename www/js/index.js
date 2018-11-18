@@ -2,7 +2,7 @@ var app = {
   initialize: function() {
     document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
   },
-  onDeviceReady: function() {photograph();},
+  onDeviceReady: function() {},
   receivedEvent: function(id) {}
 };
 
@@ -15,7 +15,7 @@ var photograph=function() {
 }
 
 function delay() {
-  return new Promise(resolve =>  setTimeout(resolve, 3000));
+  return new Promise(resolve =>  setTimeout(resolve, 15000));
 }
 
 async function delayedLog(item) {
