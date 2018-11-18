@@ -33,5 +33,5 @@ async function processArray(array) {
 app.initialize();
 CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
 CameraPreview.setFlashMode(CameraPreview.FLASH_MODE.OFF);
-processArray([1, 2, 3]);
+processArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
