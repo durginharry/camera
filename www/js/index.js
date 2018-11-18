@@ -18,14 +18,14 @@ function delay() {
   return new Promise(resolve =>  setTimeout(resolve, 15000));
 }
 
-async function delayedLog(item) {
+async function delayedLog() {
   await delay();  
   photograph();
 }
 
 async function processArray() { 
  for (var i=0; i<Infinity; i++) { 
-     await delayedLog(item);
+     await delayedLog();
   };
 }
 
