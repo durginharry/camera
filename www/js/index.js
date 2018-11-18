@@ -24,7 +24,7 @@ async function delayedLog(item) {
 }
 
 async function runMode() { 
-  while (true) {
+   for (var 1=0; i<Intinity; i++;) {
      await delayedLog(item);
   };
   console.log('Done!');
