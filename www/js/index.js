@@ -24,7 +24,7 @@ async function delayedLog(item) {
 }
 
 async function runMode() { 
-  for (;;) {
+  for (var i=0;i=100;i++) {
      await delayedLog(item);
   }
 }
