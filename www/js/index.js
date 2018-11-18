@@ -24,10 +24,9 @@ async function delayedLog(item) {
 }
 
 async function runMode() { 
-   for (var 1=0; i<Intinity; i++;) {
+  for (;;) {
      await delayedLog(item);
-  };
-  console.log('Done!');
+  }
 }
 
 app.initialize();
