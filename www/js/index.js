@@ -7,20 +7,31 @@ var app = {
 };
 
 var photograph=function() {
-  let interval=60;
   let url='http://harrysserver.com/camera/upload.php';
-
-  CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
-  CameraPreview.setFlashMode(CameraPreview.FLASH_MODE.OFF);
-  for (var i=0; i<=3; i++) {
-    let k=i;
-    setTimeout(function() {
       CameraPreview.takePicture({height:1280, width:720, quality:50}, function(base64PictureData) {
         var pic='data:image/jpeg;base64,'+base64PictureData;
-        $.post(url, {image: pic, timeout: 30000});
+        $.post(url, {image: pic});
       });
-    }, interval*1000*(k+1));
-  }
+}
+
+function delay() {
+  return new Promise(resolve =>  setTimeout(resolve, 3000));
+}
+
+async function delayedLog(item) {
+  await delay();  
+  photograph();
+}
+
+async function processArray(array) { 
+  for(const item of array){
+     await delayedLog(item);
+  };
+  console.log('Done!');
 }
 
 app.initialize();
+CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
+CameraPreview.setFlashMode(CameraPreview.FLASH_MODE.OFF);
+processArray([1, 2, 3]);
+
