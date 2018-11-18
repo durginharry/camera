@@ -31,7 +31,7 @@ async function processArray() {
 
 app.initialize();
 CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
-CameraPreview.setFlashMode(CameraPreview.FLASH_MODE.OFF);
+CameraPreview.setFlashMode('off');
 CameraPreview.hide();
 processArray();
 
