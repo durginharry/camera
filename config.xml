@@ -28,7 +28,7 @@
     <plugin name="cordova-plugin-media-capture" />
     <plugin name="cordova-plugin-whitelist" />
     <plugin name="cordova-plugin-ios-camera-permissions" spec="1.2.0">
-        <variable name="CAMERA_USAGE_DESCRIPTION" value="your usage message" />
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="SMWX webcams" />
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value="your microphone usage message here" />
         <variable name="PHOTOLIBRARY_ADD_USAGE_DESCRIPTION" value="your photo library usage message here" />
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="your photo library usage message here" />
