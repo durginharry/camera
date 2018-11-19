@@ -31,7 +31,7 @@ async function processArray() {
 
 app.initialize();
 CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
-CameraPreview.getFocusMode(function(f){ alert('f');});
+CameraPreview.getFocusMode(function(f){ alert(f);});
 CameraPreview.getFlashMode(function(f){ alert('2');});
 //CameraPreview.getFocusMode(function(currentFocusMode){ alert(currentFocusMode); });
 //CameraPreview.setFocusMode('fixed');
