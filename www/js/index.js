@@ -36,7 +36,7 @@ CameraPreview.getSupportedFocusModes(function(focusModes){
     alert(focusMode + ', ');
   });
 });
-CameraPreview.setFlashMode('off');
-CameraPreview.hide();
-processArray();
+//CameraPreview.setFlashMode('off');
+//CameraPreview.hide();
+//processArray();
 
