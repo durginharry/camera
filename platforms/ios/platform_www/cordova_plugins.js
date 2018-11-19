@@ -13,7 +13,8 @@ module.exports.metadata =
 // TOP OF METADATA
 {
   "cordova-plugin-camera-preview": "0.10.0",
-  "cordova-plugin-whitelist": "1.3.3"
+  "cordova-plugin-whitelist": "1.3.3",
+  "cordova-plugin-ios-camera-permissions": "1.2.0"
 };
 // BOTTOM OF METADATA
 });

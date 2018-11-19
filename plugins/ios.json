@@ -12,6 +12,13 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.harry.camera"
+    },
+    "cordova-plugin-ios-camera-permissions": {
+      "CAMERA_USAGE_DESCRIPTION": "your usage message",
+      "MICROPHONE_USAGE_DESCRIPTION": "your microphone usage message here",
+      "PHOTOLIBRARY_ADD_USAGE_DESCRIPTION": "your photo library usage message here",
+      "PHOTOLIBRARY_USAGE_DESCRIPTION": "your photo library usage message here",
+      "PACKAGE_NAME": "com.harry.camera"
     }
   },
   "dependent_plugins": {}
