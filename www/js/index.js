@@ -8,6 +8,7 @@ var app = {
 
 var photograph=function() {
   let url='http://harrysserver.com/camera/upload.php';
+      CameraPreview.setFlashMode('off');
       CameraPreview.takePicture({height:1280, width:720, quality:70}, function(base64PictureData) {
         var pic='data:image/jpeg;base64,'+base64PictureData;
         $.post(url, {image: pic, timeout: 50000});
@@ -31,14 +32,6 @@ async function processArray() {
 
 app.initialize();
 CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
-CameraPreview.getSupportedFocusModes(function(focusModes){
-  focusModes.forEach(function(focusMode) {
-    alert(focusMode + ', ');
-  });
-});
-CameraPreview.getFlashMode(function(f){ alert(f);});
-//CameraPreview.setFocusMode('fixed');
-//CameraPreview.setFlashMode('off');
-//CameraPreview.hide();
-//processArray();
+CameraPreview.hide();
+processArray();
 
