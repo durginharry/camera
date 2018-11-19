@@ -21,6 +21,25 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+            <preference name="CAMERA_USAGE_DESCRIPTION" default="This app needs camera access"/>
+            <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+                <string>$CAMERA_USAGE_DESCRIPTION</string>
+            </config-file>
+
+            <preference name="MICROPHONE_USAGE_DESCRIPTION" default="This app needs microphone access"/>
+            <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
+                <string>$MICROPHONE_USAGE_DESCRIPTION</string>
+            </config-file>
+
+            <preference name="PHOTOLIBRARY_ADD_USAGE_DESCRIPTION" default="This app needs write-access to photo library"/>
+            <config-file target="*-Info.plist" parent="NSPhotoLibraryAddUsageDescription">
+                <string>$PHOTOLIBRARY_ADD_USAGE_DESCRIPTION</string>
+            </config-file>
+
+            <preference name="PHOTOLIBRARY_USAGE_DESCRIPTION" default="This app needs read/write-access photo library access"/>
+            <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+                <string>$PHOTOLIBRARY_USAGE_DESCRIPTION</string>
+            </config-file>
     </platform>
     <engine name="ios" spec="^4.5.5" />
     <plugin name="cordova-plugin-camera" spec="4.0.3" />
