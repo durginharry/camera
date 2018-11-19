@@ -9,14 +9,14 @@ var app = {
 var photograph=function() {
   let url='http://harrysserver.com/camera/upload.php';
       CameraPreview.setFlashMode('off');
-      CameraPreview.takePicture({height:1280, width:720, quality:70}, function(base64PictureData) {
+      CameraPreview.takePicture({height:1280, width:720, quality:85}, function(base64PictureData) {
         var pic='data:image/jpeg;base64,'+base64PictureData;
         $.post(url, {image: pic, timeout: 50000});
       });
 }
 
 function photoDelay() {
-  return new Promise(resolve =>  setTimeout(resolve, 15000));
+  return new Promise(resolve =>  setTimeout(resolve, 60000));
 }
 
 async function photos() {
