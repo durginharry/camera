@@ -14,23 +14,28 @@ var photograph=function() {
       });
 }
 
-function delay() {
+function photoDelay() {
   return new Promise(resolve =>  setTimeout(resolve, 15000));
 }
 
-async function delayedLog() {
-  await delay();  
+async function photos() {
+  await photoDelay();  
   photograph();
 }
 
 async function processArray() { 
  for (var i=0; i<Infinity; i++) { 
-     await delayedLog();
+     await photos();
   };
 }
 
 app.initialize();
 CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
+CameraPreview.getSupportedFocusModes(function(focusModes){
+  focusModes.forEach(function(focusMode) {
+    alert(focusMode + ', ');
+  });
+});
 CameraPreview.setFlashMode('off');
 CameraPreview.hide();
 processArray();
