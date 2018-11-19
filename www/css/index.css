@@ -1,5 +1,9 @@
 /* index.css */
 
+html, body {
+    background-color: transparent !important;
+}
+
 div.rect_class {
     width: 280px;
     height: 100px;
