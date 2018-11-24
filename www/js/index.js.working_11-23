@@ -2,15 +2,9 @@ var app = {
   initialize: function() {
     document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
   },
-  onDeviceReady: function() {
-  navigator.geolocation.getCurrentPosition(myPosition);
-},
+  onDeviceReady: function() {},
   receivedEvent: function(id) {}
 };
-
-function myPosition(position) {
-  alert(position.coords.latitude);
-}
 
 var photograph=function() {
   let url='http://harrysserver.com/camera/windward.php';
