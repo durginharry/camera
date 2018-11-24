@@ -3,6 +3,7 @@ var app = {
     document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
   },
   onDeviceReady: function() {
+    alert(1);
     navigator.geolocation.getCurrentPosition(myPosition);
   },
   receivedEvent: function(id) {}
@@ -18,6 +19,7 @@ var photograph=function() {
 }
 
 var myPosition=function(position) {
+  alert(2);
   alert(position.coords.latitude);
 }
 
