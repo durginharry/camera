@@ -17,8 +17,11 @@ var photograph=function() {
 }
 
 var myPosition=function(position) {
-  alert(2);
   alert(position.coords.latitude);
+}
+
+function fail(error) {
+  alert(error);
 }
 
 function photoDelay() {
@@ -37,7 +40,7 @@ async function processArray() {
 }
 
 app.initialize();
-navigator.geolocation.getCurrentPosition(myPosition);
+navigator.geolocation.getCurrentPosition(myPosition, fail);
 //CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
 //CameraPreview.hide();
 //processArray();
