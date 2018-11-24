@@ -34,4 +34,5 @@
         <variable name="PHOTOLIBRARY_ADD_USAGE_DESCRIPTION" value="your photo library usage message here" />
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="your photo library usage message here" />
     </plugin>
+    <plugin name="cordova-plugin-geolocation" spec="^4.0.1" />
 </widget>

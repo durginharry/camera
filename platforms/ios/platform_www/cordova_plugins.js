@@ -7,6 +7,38 @@ module.exports = [
     "clobbers": [
       "CameraPreview"
     ]
+  },
+  {
+    "id": "cordova-plugin-geolocation.Coordinates",
+    "file": "plugins/cordova-plugin-geolocation/www/Coordinates.js",
+    "pluginId": "cordova-plugin-geolocation",
+    "clobbers": [
+      "Coordinates"
+    ]
+  },
+  {
+    "id": "cordova-plugin-geolocation.PositionError",
+    "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+    "pluginId": "cordova-plugin-geolocation",
+    "clobbers": [
+      "PositionError"
+    ]
+  },
+  {
+    "id": "cordova-plugin-geolocation.Position",
+    "file": "plugins/cordova-plugin-geolocation/www/Position.js",
+    "pluginId": "cordova-plugin-geolocation",
+    "clobbers": [
+      "Position"
+    ]
+  },
+  {
+    "id": "cordova-plugin-geolocation.geolocation",
+    "file": "plugins/cordova-plugin-geolocation/www/geolocation.js",
+    "pluginId": "cordova-plugin-geolocation",
+    "clobbers": [
+      "navigator.geolocation"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -14,7 +46,8 @@ module.exports.metadata =
 {
   "cordova-plugin-camera-preview": "0.10.0",
   "cordova-plugin-whitelist": "1.3.3",
-  "cordova-plugin-ios-camera-permissions": "1.2.0"
+  "cordova-plugin-ios-camera-permissions": "1.2.0",
+  "cordova-plugin-geolocation": "4.0.1"
 };
 // BOTTOM OF METADATA
 });

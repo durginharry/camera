@@ -27,6 +27,7 @@
 		12736405959345B3A3E54E17 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B11FB192FA834C939A486012 /* GLKit.framework */; };
 		0EE6BB5998824257ACBABDD0 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7C57F43F78C426B8B74932B /* CoreVideo.framework */; };
 		EC44C24EF8344B90BCD8CB1B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED84B4F849DB4EF4BAE19785 /* QuartzCore.framework */; };
+		60EDD16228F4402A93650499 /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F924C94B17474BBFAB0731A1 /* CDVLocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		B11FB192FA834C939A486012 /* GLKit.framework */ = {isa = PBXFileReference; name = "GLKit.framework"; path = "System/Library/Frameworks/GLKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		C7C57F43F78C426B8B74932B /* CoreVideo.framework */ = {isa = PBXFileReference; name = "CoreVideo.framework"; path = "System/Library/Frameworks/CoreVideo.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		ED84B4F849DB4EF4BAE19785 /* QuartzCore.framework */ = {isa = PBXFileReference; name = "QuartzCore.framework"; path = "System/Library/Frameworks/QuartzCore.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		F924C94B17474BBFAB0731A1 /* CDVLocation.m */ = {isa = PBXFileReference; name = "CDVLocation.m"; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		3E1385FB3A06405598AF8B4E /* CDVLocation.h */ = {isa = PBXFileReference; name = "CDVLocation.h"; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,8 @@
 				86C88297C9CA4A2E9EB8F424 /* TemperatureAndTint.h */,
 				BFECDE42D24C431F9038B7B9 /* CameraSessionManager.h */,
 				FF757AC833B742FCAF97F763 /* CameraRenderController.h */,
+				F924C94B17474BBFAB0731A1 /* CDVLocation.m */,
+				3E1385FB3A06405598AF8B4E /* CDVLocation.h */,
 			);
 			name = Plugins;
 			path = "camera/Plugins";
@@ -323,6 +328,7 @@
 				3F4FC4F7AE7F42E8A8A5640E /* TemperatureAndTint.m in Sources */,
 				AE5BE7F0DBF94A53A1D7C02C /* CameraSessionManager.m in Sources */,
 				490DE4AA533042C4B5C7C878 /* CameraRenderController.m in Sources */,
+				60EDD16228F4402A93650499 /* CDVLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
