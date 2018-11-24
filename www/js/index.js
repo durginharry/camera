@@ -3,7 +3,6 @@ var app = {
     document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
   },
   onDeviceReady: function() {
-    navigator.geolocation.getCurrentPosition(myPosition);
   },
   receivedEvent: function(id) {}
 };
@@ -38,7 +37,8 @@ async function processArray() {
 }
 
 app.initialize();
-CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
-CameraPreview.hide();
-processArray();
+navigator.geolocation.getCurrentPosition(myPosition);
+//CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
+//CameraPreview.hide();
+//processArray();
 
