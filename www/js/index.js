@@ -2,8 +2,7 @@ var app = {
   initialize: function() {
     document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
   },
-  onDeviceReady: function() {
-  },
+  onDeviceReady: function() {},
   receivedEvent: function(id) {}
 };
 
@@ -14,14 +13,6 @@ var photograph=function() {
         var pic='data:image/jpeg;base64,'+base64PictureData;
         $.post(url, {image: pic, timeout: 50000});
       });
-}
-
-var myPosition=function(position) {
-  alert(position.coords.latitude);
-}
-
-function fail(error) {
-  alert(error);
 }
 
 function photoDelay() {
@@ -40,8 +31,7 @@ async function processArray() {
 }
 
 app.initialize();
-navigator.geolocation.getCurrentPosition(myPosition, fail);
-//CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
-//CameraPreview.hide();
-//processArray();
+CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
+CameraPreview.hide();
+processArray();
 
