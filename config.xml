@@ -25,13 +25,13 @@
 
     <platform name="ios">
         <edit-config target="NSLocationAlwaysAndWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-            <string>This app uses your location for maps.</string>
+            <string>SMWX</string>
         </edit-config>
         <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-            <string>This app uses your location for maps.</string>
+            <string>SMWX</string>
         </edit-config>
         <edit-config target="NSLocationAlwaysUsageDescription" file="*-Info.plist" mode="merge">
-            <string>This app uses your location for maps.</string>
+            <string>SMWX</string>
         </edit-config>
     </platform>
 
@@ -40,7 +40,7 @@
     <plugin name="cordova-plugin-camera-preview" />
     <plugin name="cordova-plugin-media-capture" />
     <plugin name="cordova-plugin-geolocation" spec="~4">
-        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="This app uses your location for maps." />
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="SMWX" />
     </plugin>
     <plugin name="cordova-plugin-whitelist" />
     <plugin name="cordova-plugin-ios-camera-permissions" spec="1.2.0">
