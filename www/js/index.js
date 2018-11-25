@@ -50,7 +50,7 @@ var onSuccess = function(position) {
     }
 app.initialize();
 
-navigator.geolocation.getCurrentPosition(onSuccess, onError, {timeout: 10000, enableHighAccuracy: true});
+navigator.geolocation.getCurrentPosition(onSuccess, onError, {timeout: 30000, enableHighAccuracy: false});
 
 //navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
