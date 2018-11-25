@@ -32,6 +32,7 @@ async function processArray() {
 
 
 var onSuccess = function(position) {
+alert(2);
         alert('Latitude: '          + position.coords.latitude          + '\n' +
               'Longitude: '         + position.coords.longitude         + '\n' +
               'Altitude: '          + position.coords.altitude          + '\n' +
@@ -49,8 +50,8 @@ var onSuccess = function(position) {
               'message: ' + error.message + '\n');
     }
 app.initialize();
-
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+alert(1);
+navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
 // CameraPreview.startCamera({camera: CameraPreview.CAMERA_DIRECTION.BACK});
 // CameraPreview.hide();
