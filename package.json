@@ -14,7 +14,8 @@
         "cordova-plugin-camera-preview": "^0.10.0",
         "cordova-plugin-geolocation": "^4.0.1",
         "cordova-plugin-ios-camera-permissions": "1.2.0",
-        "cordova-plugin-whitelist": "^1.3.3"
+        "cordova-plugin-whitelist": "^1.3.3",
+        "org.apache.cordova.geolocation": "^0.3.6"
     },
     "cordova": {
         "plugins": {
@@ -26,7 +27,8 @@
                 "PHOTOLIBRARY_ADD_USAGE_DESCRIPTION": "your photo library usage message here",
                 "PHOTOLIBRARY_USAGE_DESCRIPTION": "your photo library usage message here"
             },
-            "cordova-plugin-geolocation": {}
+            "cordova-plugin-geolocation": {},
+            "org.apache.cordova.geolocation": {}
         },
         "platforms": [
             "ios"
